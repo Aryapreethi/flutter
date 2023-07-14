@@ -1,27 +1,32 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
-import 'package:googlesignin/signin.dart';
+import 'package:task1/phverfy.dart';
+import 'package:task1/viewdata.dart';
+import 'package:task1/viewsample.dart';
+
+import 'getdata.dart';
 
 
-List<CameraDescription> cameras = [];
-
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  cameras = await availableCameras();
-  await Firebase.initializeApp();
-  runApp(MyApp());
+  Firebase.initializeApp();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Camera Swipe Demo',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blue,
       ),
-      home: Sign(),
+      home: Basic(),
     );
   }
 }
+
+

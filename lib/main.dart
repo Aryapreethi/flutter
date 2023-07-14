@@ -1,15 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:task1/phverfy.dart';
-import 'package:task1/viewdata.dart';
-import 'package:task1/viewsample.dart';
+import 'package:machinetest/view.dart';
 
-import 'getdata.dart';
-
+import 'crud.dart';
+import 'login.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -22,9 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+
         primarySwatch: Colors.blue,
       ),
-      home: Basic(),
+      home: Login(),
     );
   }
 }
